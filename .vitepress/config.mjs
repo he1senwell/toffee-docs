@@ -2,8 +2,9 @@ import { defineConfig } from 'vitepress'
 import { set_sidebar } from "../.vitepress/utils/auto-sidebar";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/toffee-docs/',
   // 标题
-  head: [["link", { rel: "icon", href: "/texture.png" }]],
+  head: [["link", { rel: "icon", href: "/toffee-docs/texture.png" }]],
 
   // 文档标题
   title: "太妃糖的文档项目",
