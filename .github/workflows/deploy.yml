@@ -22,11 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: pnpm
@@ -36,7 +36,7 @@ jobs:
           corepack enable  # 启用 Corepack[^37^]
           corepack prepare pnpm@9.12.3 --activate  # 激活指定版本的 pnpm[^37^]
       - name: Setup Pages
-        uses: actions/configure-pages@v3  # 在工作流程自动配置GithubPages
+        uses: actions/configure-pages@v4  # 在工作流程自动配置GithubPages
       - name: Clear pnpm cache
         run: pnpm store prune
       - name: Install dependencies
@@ -61,4 +61,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment  # 指定id
-        uses: actions/deploy-pages@v2 # 将之前的构建产物部署到github pages中
+        uses: actions/deploy-pages@v4 # 将之前的构建产物部署到github pages中
