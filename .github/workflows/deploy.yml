@@ -22,11 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v2
         with:
           node-version: 18
           cache: pnpm
@@ -36,7 +36,7 @@ jobs:
           corepack enable  # 启用 Corepack[^37^]
           corepack prepare pnpm@9.12.3 --activate  # 激活指定版本的 pnpm[^37^]
       - name: Setup Pages
-        uses: actions/configure-pages@v4  # 在工作流程自动配置GithubPages
+        uses: actions/configure-pages@v3  # 在工作流程自动配置GithubPages
       - name: Clear pnpm cache
         run: pnpm store prune
       - name: Install dependencies
@@ -46,7 +46,7 @@ jobs:
           pnpm run docs:build # 启动项目
           touch .nojekyll  # 通知githubpages不要使用Jekyll处理这个站点，不知道为啥不生效，就手动搞了
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4  # 上传构建产物
+        uses: actions/upload-pages-artifact@v3  # 上传构建产物
         with:
           path: .vitepress/dist # 指定上传的路径，当前是根目录，如果是docs需要加docs/的前缀
 
