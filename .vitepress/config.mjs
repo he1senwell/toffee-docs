@@ -17,13 +17,29 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     // 顶部导航栏
     nav: [
-      { text: '家', 
+      {
+        text: "前端",
         items: [
-          { text: '首页', link: '/' },
-          { text: 'markdown示例', link: '/markdown-examples' },
-        ]
+          { text: "React", link: "/docs/front-end/react" },
+          { text: "Vue2", link: "/docs/front-end/vue2" }
+        ],
       },
-      { text: '示例', link: '/markdown-examples' }
+      {
+        text: "计算机基础",
+        items: [
+          { text: "计算机网络", link: "/docs/computer-basic/computer-network" },
+          { text: "操作系统", link: "/docs/computer-basic/operating-system" },
+        ],
+      },
+      {
+        text: "其他",
+        items: [
+          { text: "Git", link: "/docs/tools/git" },
+          { text: "常用技术官方文档", link: "/docs/tools/docs-link" },
+          { text: "常用图标", link: "/docs/tools/icons" },
+          { text: "小知识", link: "/docs/tools/tips" },
+        ],
+      },
     ],
  
     // sidebar: [
